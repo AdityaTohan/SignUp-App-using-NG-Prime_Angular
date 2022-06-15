@@ -1,0 +1,66 @@
+<div>
+  <p-messages *ngIf="messageEnable" class="alert" [(value)]="message" [enableService]="false"></p-messages>
+  <div class="container" [style.padding]="returnCount() + 'px'">
+
+      <mat-tab-group>
+        <mat-tab label="SignUp">
+              <form [formGroup]="signupForm" class="signup-form">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText formControlName="firstName" placeholder="Firstname">
+            </div>
+
+<!--            <p-message severity="error" text="Field is required"></p-message>-->
+
+           <div class="p-inputgroup">
+             <span class="p-inputgroup-addon"><i class="pi pi-users"></i></span>
+             <input type="text" pInputText formControlName="lastName" placeholder="Lastname">
+           </div>
+
+           <div class="p-inputgroup">
+             <span class="p-inputgroup-addon"><i class="pi pi-user-plus"></i></span>
+             <input type="text" pInputText formControlName="userName" placeholder="Username">
+           </div>
+
+           <div class="p-inputgroup">
+             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+             <input type="text" pInputText formControlName="email" placeholder="Email">
+           </div>
+
+           <div class="p-inputgroup">
+             <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+             <input type="password" pInputText formControlName="password" placeholder="Password">
+           </div>
+
+          <button pButton pRipple type="button" icon="pi pi-sign-in" label="SignUp" (click)="signup()" class="p-button-outlined"></button>
+              </form>
+        </mat-tab>
+
+        <mat-tab label="LogIn">
+          <form [formGroup]="loginForm" class="login-form">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+              <input type="text" pInputText formControlName="email" placeholder="Email">
+            </div>
+
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+              <input type="password" formControlName="password" pInputText placeholder="Password">
+            </div>
+            <div>
+              <button pButton type="button" icon="pi pi-sign-in" label="LogIn" (click)="login()" class="p-button-outlined"></button>
+            </div>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+
+  </div>
+
+  <div style="position: relative;" class="speeddial-tooltip">
+    <p-speedDial [model]="leftTooltipItems" className="speeddial-right" direction="up"></p-speedDial>
+    <button pButton pRipple type="button" icon="pi pi-search-plus" class="p-button-rounded p-button-text up" (click)="scaleUp()"></button>
+    <button pButton pRipple type="button" icon="pi pi-search-minus" class="p-button-rounded p-button-text down" (click)="scaleDown()"></button>
+  </div>
+
+</div>
+

@@ -1,0 +1,35 @@
+:host ::ng-deep {
+  .speeddial-tooltip {
+    .p-speeddial-direction-up {
+      &.speeddial-right {
+        position: fixed;
+        float: right;
+        bottom: 60px;
+        right: 41px;
+      }
+    }
+  }
+}
+.up{
+  position: fixed;
+  bottom: 100px;
+  left: 41px;
+}
+.down{
+  position: fixed;
+  bottom: 60px;
+  left: 41px;
+}
+.p-inputgroup{
+  padding:2%;
+}
+
+.container{
+  margin: auto;
+  width: 30%;
+}
+
+button{
+  text-align: center;
+  width:100%;
+}
